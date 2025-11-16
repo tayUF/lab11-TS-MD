@@ -1,9 +1,6 @@
-"""
-calculator.py
-- Defines functions used to create a simple calculator
-
-One function per operation, in order.
-"""
+# https://github.com/tayUF/lab11-TS-MD
+# Partner 1: Taylor Schwartz
+# Partner 2: Magnus Donis
 
 import math
 
@@ -20,7 +17,7 @@ def hypotenuse(a, b):
 # First example
 def add(a, b): 
     return a + b
-def sub(a, b):
+def subtract(a, b):
     return a - b
 def mul(a, b):
     return a * b
