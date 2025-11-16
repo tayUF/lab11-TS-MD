@@ -4,7 +4,7 @@
 
 import pytest
 import math
-from calculator import add, sub, mul, div, logarithm, exp, hypotenuse, square_root
+from calculator import add, subtract, mul, div, logarithm, exp, hypotenuse, square_root
 
 def test_add():
     assert add(2, 3) == 5
@@ -12,9 +12,9 @@ def test_add():
     assert add(0, 0) == 0
 
 def test_subtract():
-    assert sub(5, 2) == 3
-    assert sub(0, 3) == -3
-    assert sub(-2, -2) == 0
+    assert subtract(5, 2) == 3
+    assert subtract(0, 3) == -3
+    assert subtract(-2, -2) == 0
 
 def test_multiply():
     assert mul(5, 2) == 10
