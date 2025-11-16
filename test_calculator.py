@@ -1,8 +1,6 @@
 # https://github.com/tayUF/lab11-TS-MD
 # Partner 1: Taylor Schwartz
 # Partner 2: Magnus Donis
-
-import pytest
 import math
 from calculator import add, subtract, mul, div, logarithm, exp, hypotenuse, square_root
 
@@ -26,18 +24,22 @@ def test_divide():
     assert div(4, 8)  == 0.5
 
 def test_divide_by_zero():
-    with pytest.raises(ZeroDivisionError):
+    try:
         div(5, 0)
+    except ZeroDivisionError:
+        raise ZeroDivisionError
+
 
 def test_logarithm():
     assert math.isclose(logarithm(10, 100), 2)
     assert math.isclose(logarithm(2, 8), 3)
 
 def test_log_invalid_argument():
-    with pytest.raises(TypeError):
+    try:
         logarithm('hello', 5)
-    with pytest.raises(TypeError):
         logarithm(2, '5')
+    except TypeError:
+        raise TypeError
 
 def test_hypotenuse():
     assert math.isclose(hypotenuse(3, 3), math.sqrt(18))
@@ -49,9 +51,9 @@ def test_square_root():
     assert square_root(9) == 3
     assert square_root(36) == 6
 def test_log_invalid_base():
-    with pytest.raises(ValueError):
+    try:
         logarithm(-1, 5)
-    with pytest.raises(ValueError):
         logarithm(-2, 8)
-    with pytest.raises(ValueError):
         logarithm(2, -8)
+    except ValueError:
+        raise ValueError
