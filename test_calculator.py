@@ -5,7 +5,7 @@ import math
 import unittest
 from calculator import add, subtract, mul, div, logarithm, exp, hypotenuse, square_root
 
-class TestStringMethods(unittest.TestCase):
+class TestCalculator(unittest.TestCase):
     def test_add(self):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 1), 0)
@@ -57,6 +57,3 @@ class TestStringMethods(unittest.TestCase):
             logarithm(-2, 8)
         with self.assertRaises(ValueError):
             logarithm(2, -8)
-
-if __name__ == '__main__':
-    unittest.main()
