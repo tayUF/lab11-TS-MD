@@ -29,13 +29,11 @@ def div(a, b):
         return a / b
     except ZeroDivisionError as zeroDivError:
         raise zeroDivError
-def log(a, b):
+def logarithm(a, b):
     try:
         return math.log(b, a)
     except ValueError as valError:
         raise valError
 def exp(a, b):
     return a ** b
-
-square_root(-5)
 
