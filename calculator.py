@@ -1,27 +1,41 @@
-#https://github.com/tayUF/lab11-TS-MD
+# https://github.com/tayUF/lab11-TS-MD
 # Partner 1: Taylor Schwartz
 # Partner 2: Magnus Donis
 
 import math
 
+def square_root(a):
+    try:
+        return math.sqrt(a)
+    except ValueError as valError:
+        raise valError
+
+def hypotenuse(a, b):
+    try:
+        return math.sqrt(a**2 + b**2)
+    except ValueError as valError:
+        raise valError
+
 def add(a, b):
     return a + b
 
-def sub(a, b):
+def subtract(a, b):
     return a - b
 
 def mul(a, b):
     return a * b
 
 def div(a, b):
-    if b == 0:
-        raise ZeroDivisionError("Cannot divide by zero")
-    return a / b
+    try:
+        return a / b
+    except ZeroDivisionError as zeroDivError:
+        raise zeroDivError
 
-def log(a, b):
-    if a <= 0 or b <= 0 or a == 1:
-        raise ValueError("Invalid base or argument for logarithm")
-    return math.log(b, a)
+def logarithm(a, b):
+    try:
+        return math.log(b, a)
+    except ValueError as valError:
+        raise valError
 
 def exp(a, b):
     return a ** b
